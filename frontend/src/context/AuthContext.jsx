@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 // Mock user for development
 const MOCK_USER = {
   id: "user1",
-  name: "Demo User",
+  name: "Abhishek Hiremath",
   email: "user@ecofinds.com",
   role: "user",
   avatar:
