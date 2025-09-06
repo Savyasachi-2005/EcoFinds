@@ -1,6 +1,6 @@
 
 from pydantic import BaseModel, EmailStr, ConfigDict
-from typing import List, Optional
+from typing import Optional
 
 # Token Schemas
 class Token(BaseModel):
@@ -20,20 +20,6 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    model_config = ConfigDict(from_attributes=True)
-
-# Item Schemas
-class ItemBase(BaseModel):
-    title: str
-    category: str
-    eco_score: float
-
-class ItemCreate(ItemBase):
-    pass
-
-class Item(ItemBase):
-    id: int
-    user_id: int
     model_config = ConfigDict(from_attributes=True)
 
 # Report Schemas
