@@ -5,10 +5,8 @@ import LocalPickupMap from "../landing-page/components/LocalPickupMap";
 const SellPage = () => {
   return (
     <main className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-10">
-        <h1 className="text-2xl font-semibold">Start selling in minutes</h1>
+      <div className="container-eco pt-1 sm:pt-2 lg:pt-3 pb-10 sm:pb-14 lg:pb-16 space-y-4 sm:space-y-6 lg:space-y-8">
         <QuickSellForm />
-        <h2 className="text-xl font-semibold">Local pickup locations</h2>
         <LocalPickupMap />
       </div>
     </main>

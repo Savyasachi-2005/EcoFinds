@@ -68,10 +68,10 @@ const HeroSection = () => {
         <div className="absolute bottom-40 right-20 w-48 h-48 bg-secondary rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-accent rounded-full blur-2xl"></div>
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+      <div className="relative container-eco py-4 md:py-0">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 lg:gap-12 items-center min-h-[calc(100vh-64px)]">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Early Access Note */}
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground bg-card/60 border border-border rounded-full px-3 py-1">
               <Icon name="Rocket" size={16} className="text-primary" />
@@ -81,12 +81,12 @@ const HeroSection = () => {
             </div>
 
             {/* Main Headline */}
-            <div className="space-y-4">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
+            <div className="space-y-3 sm:space-y-4">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Give Products a{" "}
                 <span className="text-primary">Second Life</span>
               </h1>
-              <p className="text-xl sm:text-2xl text-muted-foreground font-medium">
+              <p className="text-lg sm:text-2xl text-muted-foreground font-medium">
                 Find great deals and keep good products in use
               </p>
             </div>
@@ -99,7 +99,7 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 variant="default"
                 size="lg"
@@ -128,7 +128,7 @@ const HeroSection = () => {
           {/* Right Content - Product Carousel */}
           <div className="relative">
             <div className="relative bg-card rounded-3xl p-8 shadow-eco-cta">
-              <div className="absolute top-4 right-4 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+              <div className="absolute top-4 right-4 z-20 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium pointer-events-none shadow">
                 Trending
               </div>
 
@@ -139,7 +139,7 @@ const HeroSection = () => {
                     alt={trendingProducts?.[currentSlide]?.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
-                  <div className="absolute top-4 left-4 bg-success text-success-foreground px-3 py-1 rounded-full text-sm font-bold">
+                  <div className="absolute top-4 left-4 z-10 bg-success text-success-foreground px-3 py-1 rounded-full text-sm font-bold pointer-events-none shadow">
                     {trendingProducts?.[currentSlide]?.savings}% OFF
                   </div>
                 </div>
@@ -209,7 +209,7 @@ const HeroSection = () => {
         </div>
       </div>
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <Icon name="ChevronDown" size={24} className="text-muted-foreground" />
       </div>
     </section>

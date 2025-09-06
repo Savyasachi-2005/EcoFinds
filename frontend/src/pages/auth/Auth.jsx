@@ -94,12 +94,12 @@ export default function AuthPage({ apiBase = "" }) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl auth-card overflow-hidden grid grid-cols-1 md:grid-cols-2">
+    <div className="min-h-[calc(100svh-4rem)] bg-gray-50 flex items-center justify-center px-4 py-2 md:py-4">
+      <div className="w-full max-w-xl md:max-w-3xl lg:max-w-4xl auth-card grid grid-cols-1 md:grid-cols-2 md:overflow-hidden">
         {/* Branding / toggle */}
-        <div className="p-8 auth-gradient text-white flex flex-col">
+        <div className="p-6 md:p-8 auth-gradient text-white flex flex-col md:min-h-[28rem]">
           <div>
-            <h1 className="text-3xl font-extrabold">EcoFinds</h1>
+            <h1 className="text-2xl md:text-3xl font-extrabold">EcoFinds</h1>
             <p className="mt-2 text-sm opacity-90">
               Sustainable second-hand marketplace — join the circular economy.
             </p>
@@ -135,8 +135,16 @@ export default function AuthPage({ apiBase = "" }) {
         </div>
 
         {/* Form area */}
-        <div className="p-8">
-          {error && <div className="mb-4 text-sm auth-error p-3">{error}</div>}
+        <div className="p-6 md:p-8">
+          {error && (
+            <div
+              className="mb-4 text-sm auth-error p-3"
+              role="alert"
+              aria-live="polite"
+            >
+              {error}
+            </div>
+          )}
 
           {mode === "signin" ? (
             <form
@@ -144,7 +152,7 @@ export default function AuthPage({ apiBase = "" }) {
               className="space-y-4"
               autoComplete="on"
             >
-              <h2 className="text-2xl font-semibold">
+              <h2 className="text-xl md:text-2xl font-semibold">
                 Sign in to your account
               </h2>
 
@@ -224,7 +232,9 @@ export default function AuthPage({ apiBase = "" }) {
               className="space-y-4"
               autoComplete="on"
             >
-              <h2 className="text-2xl font-semibold">Create your account</h2>
+              <h2 className="text-xl md:text-2xl font-semibold">
+                Create your account
+              </h2>
 
               <label className="block">
                 <span className="text-sm font-medium">Username</span>

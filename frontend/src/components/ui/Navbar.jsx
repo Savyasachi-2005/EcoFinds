@@ -127,7 +127,7 @@ const Navbar = () => {
       {/* Bottom-only fade + extended blur: softly blur content below and fade out */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 -bottom-4 h-6 z-0"
+        className="pointer-events-none absolute inset-x-0 -bottom-2 h-3 z-0"
         style={{
           backdropFilter: "blur(10px)",
           WebkitBackdropFilter: "blur(10px)",
