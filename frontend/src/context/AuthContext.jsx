@@ -10,7 +10,7 @@ const MOCK_USER = {
   email: "user@ecofinds.com",
   role: "user",
   avatar:
-    "https://media.licdn.com/dms/image/v2/D5603AQHIf0-dyBkPbw/profile-displayphoto-crop_800_800/B56ZkYbG_ZHIAM-/0/1757051386187?e=1759968000&v=beta&t=2fE3_k5eLjxMm_ElUg86O32hS2Mr82afqzBJvg4DtRQ",
+    "C:\\Users\\prave\\OneDrive\\Desktop\\EcoFindsFinal\\EcoFinds\\frontend\\src\\images\\1757051386187.png",
   createdAt: "2023-01-15T09:24:00Z",
 };
 
