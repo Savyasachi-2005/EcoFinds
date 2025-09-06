@@ -1,5 +1,5 @@
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, ConfigDict
 from typing import List, Optional
 
 # Token Schemas
@@ -20,8 +20,7 @@ class UserCreate(UserBase):
 
 class User(UserBase):
     id: int
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Item Schemas
 class ItemBase(BaseModel):
@@ -35,8 +34,7 @@ class ItemCreate(ItemBase):
 class Item(ItemBase):
     id: int
     user_id: int
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
 
 # Report Schemas
 class ReportBase(BaseModel):
@@ -50,5 +48,4 @@ class Report(ReportBase):
     id: int
     status: str
     user_id: int
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)
