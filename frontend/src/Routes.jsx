@@ -1,8 +1,8 @@
 import React from "react";
 import { Routes as RouterRoutes, Route } from "react-router-dom";
-import ScrollToTop from "components/ScrollToTop";
-import ErrorBoundary from "components/ErrorBoundary";
-import NotFound from "pages/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
+import ErrorBoundary from "./components/ErrorBoundary";
+import NotFound from "./pages/NotFound";
 import LandingPage from "./pages/landing-page/LandingPage";
 import SignIn from "./pages/auth/Auth";
 import SignUp from "./pages/auth/Auth";
@@ -10,6 +10,7 @@ import ImpactPage from "./pages/impact/ImpactPage";
 import ExplorePage from "./pages/explore/ExplorePage";
 import SellPage from "./pages/sell/SellPage";
 import Dashboard from "./pages/dashboard/Dashboard";
+import CartPage from "./pages/cart/CartPage";
 
 const Routes = () => {
   return (
@@ -18,6 +19,7 @@ const Routes = () => {
       <RouterRoutes>
         {/* Define your route here */}
         <Route path="/" element={<LandingPage />} />
+        <Route path="/cart" element={<CartPage />} />
         <Route path="/impact" element={<ImpactPage />} />
         <Route path="/explore" element={<ExplorePage />} />
         <Route path="/sell" element={<SellPage />} />
