@@ -1,15 +1,5 @@
 import React, { useState } from "react";
 
-/**
- * AuthPage.jsx
- * Single screen Sign In / Sign Up (Tailwind-only styling)
- * Expects your API endpoints at:
- *  - POST /api/auth/login
- *  - POST /api/auth/signup
- *
- * Usage: import AuthPage in your main app file and render.
- */
-
 const SignInInitial = { email: "", password: "", remember: false };
 const SignUpInitial = { username: "", email: "", password: "", confirmPassword: "" };
 
