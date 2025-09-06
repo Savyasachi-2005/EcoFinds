@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect } from "react";
 
 // Create the context
 export const AuthContext = createContext();
@@ -9,8 +9,9 @@ const MOCK_USER = {
   name: "Demo User",
   email: "user@ecofinds.com",
   role: "user",
-  avatar: "https://randomuser.me/api/portraits/women/48.jpg",
-  createdAt: "2023-01-15T09:24:00Z"
+  avatar:
+    "https://media.licdn.com/dms/image/v2/D5603AQHIf0-dyBkPbw/profile-displayphoto-crop_800_800/B56ZkYbG_ZHIAM-/0/1757051386187?e=1759968000&v=beta&t=2fE3_k5eLjxMm_ElUg86O32hS2Mr82afqzBJvg4DtRQ",
+  createdAt: "2023-01-15T09:24:00Z",
 };
 
 // Provider component
@@ -23,13 +24,13 @@ export const AuthProvider = ({ children }) => {
   // Load auth state from localStorage on initial render
   useEffect(() => {
     try {
-      const savedToken = localStorage.getItem('token');
-      const savedUser = localStorage.getItem('user');
-      
+      const savedToken = localStorage.getItem("token");
+      const savedUser = localStorage.getItem("user");
+
       if (savedToken) {
         setToken(JSON.parse(savedToken));
       }
-      
+
       if (savedUser) {
         setUser(JSON.parse(savedUser));
       } else {
@@ -49,16 +50,16 @@ export const AuthProvider = ({ children }) => {
     try {
       setLoading(true);
       setError(null);
-      
+
       // Mock successful login
       const mockResponse = {
         token: "mock_jwt_token",
-        user: MOCK_USER
+        user: MOCK_USER,
       };
 
       // Save to localStorage
-      localStorage.setItem('token', JSON.stringify(mockResponse.token));
-      localStorage.setItem('user', JSON.stringify(mockResponse.user));
+      localStorage.setItem("token", JSON.stringify(mockResponse.token));
+      localStorage.setItem("user", JSON.stringify(mockResponse.user));
 
       // Update state
       setToken(mockResponse.token);
@@ -76,8 +77,8 @@ export const AuthProvider = ({ children }) => {
   // Logout function
   const logout = () => {
     // Clear localStorage
-    localStorage.removeItem('token');
-    localStorage.removeItem('user');
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 
     // Reset state
     setToken(null);
@@ -89,7 +90,7 @@ export const AuthProvider = ({ children }) => {
   const updateUserProfile = (updatedData) => {
     try {
       const updatedUser = { ...user, ...updatedData };
-      localStorage.setItem('user', JSON.stringify(updatedUser));
+      localStorage.setItem("user", JSON.stringify(updatedUser));
       setUser(updatedUser);
       return updatedUser;
     } catch (err) {
@@ -105,14 +106,10 @@ export const AuthProvider = ({ children }) => {
     error,
     login,
     logout,
-    updateUserProfile
+    updateUserProfile,
   };
 
-  return (
-    <AuthContext.Provider value={value}>
-      {children}
-    </AuthContext.Provider>
-  );
+  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
 export default AuthProvider;
