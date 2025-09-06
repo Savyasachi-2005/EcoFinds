@@ -10,6 +10,12 @@ import ImpactPage from "./pages/impact/ImpactPage";
 import ExplorePage from "./pages/explore/ExplorePage";
 import SellPage from "./pages/sell/SellPage";
 import Dashboard from "./pages/dashboard/Dashboard";
+import ListingsPage from "./pages/dashboard/ListingsPage";
+import SavedPage from "./pages/dashboard/SavedPage";
+import OrdersPage from "./pages/dashboard/OrdersPage";
+import SettingsPage from "./pages/dashboard/SettingsPage";
+import Profile from "./pages/profile/Profile";
+import CartPage from "./pages/cart/CartPage";
 
 const Routes = () => {
   return (
@@ -28,6 +34,7 @@ const Routes = () => {
         <Route path="/dashboard/orders" element={<OrdersPage />} />
         <Route path="/dashboard/settings" element={<SettingsPage />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/cart" element={<CartPage/>} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
     </ErrorBoundary>
