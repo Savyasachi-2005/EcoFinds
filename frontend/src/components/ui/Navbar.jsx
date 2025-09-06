@@ -79,20 +79,36 @@ const Navbar = () => {
           {!isAuthPage && (
             <>
               {user ? (
-                <Button 
-                  asChild 
-                  variant="ghost" 
-                  size="sm" 
-                  iconName="LayoutDashboard"
-                  className={isActive("/dashboard") ? "bg-primary/10 text-primary" : ""}
-                >
-                  <Link 
-                    to="/dashboard"
-                    aria-current={isActive("/dashboard") ? "page" : undefined}
+                <>
+                  <Button 
+                    asChild 
+                    variant="ghost" 
+                    size="sm" 
+                    iconName="LayoutDashboard"
+                    className={isActive("/dashboard") ? "bg-primary/10 text-primary" : ""}
                   >
-                    Dashboard
-                  </Link>
-                </Button>
+                    <Link 
+                      to="/dashboard"
+                      aria-current={isActive("/dashboard") ? "page" : undefined}
+                    >
+                      Dashboard
+                    </Link>
+                  </Button>
+                  <Button 
+                    asChild 
+                    variant="ghost" 
+                    size="sm" 
+                    iconName="User"
+                    className={isActive("/profile") ? "bg-primary/10 text-primary" : ""}
+                  >
+                    <Link 
+                      to="/profile"
+                      aria-current={isActive("/profile") ? "page" : undefined}
+                    >
+                      Profile
+                    </Link>
+                  </Button>
+                </>
               ) : (
                 <>
                   <Button asChild variant="outline" size="sm">
