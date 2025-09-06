@@ -1,0 +1,19 @@
+/* EcoFinds brand tokens + helpers */
+:root {
+  --primary-green: #507b00;
+  --dark-green: #28430a;
+  --accent-lime: #a7d930;
+  --earth-brown: #7b4425;
+  --white: #ffffff;
+  --light-gray: #f8f9fa;
+}
+
+/* Auth page fallback helpers (works alongside Tailwind) */
+.auth-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.auth-gradient {
+  background: linear-gradient(135deg, #10b981, #059669);
+}

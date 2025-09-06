@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
 const SignInInitial = { email: "", password: "", remember: false };
-const SignUpInitial = { username: "", email: "", password: "", confirmPassword: "" };
+const SignUpInitial = {
+  username: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
+};
 
 export default function AuthPage({ apiBase = "" }) {
   const [mode, setMode] = useState("signin"); // 'signin' | 'signup'
@@ -23,8 +28,10 @@ export default function AuthPage({ apiBase = "" }) {
     if (!signUp.username) return "Username is required";
     if (!signUp.email) return "Email is required";
     if (!signUp.password) return "Password is required";
-    if (signUp.password.length < 6) return "Password must be at least 6 characters";
-    if (signUp.password !== signUp.confirmPassword) return "Passwords do not match";
+    if (signUp.password.length < 6)
+      return "Password must be at least 6 characters";
+    if (signUp.password !== signUp.confirmPassword)
+      return "Passwords do not match";
     return null;
   };
 
@@ -39,7 +46,10 @@ export default function AuthPage({ apiBase = "" }) {
       const res = await fetch(api("/api/auth/login"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email: signIn.email, password: signIn.password }),
+        body: JSON.stringify({
+          email: signIn.email,
+          password: signIn.password,
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.message || "Sign in failed");
@@ -65,7 +75,11 @@ export default function AuthPage({ apiBase = "" }) {
       const res = await fetch(api("/api/auth/signup"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ username: signUp.username, email: signUp.email, password: signUp.password }),
+        body: JSON.stringify({
+          username: signUp.username,
+          email: signUp.email,
+          password: signUp.password,
+        }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data?.message || "Sign up failed");
@@ -80,12 +94,14 @@ export default function AuthPage({ apiBase = "" }) {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center p-4">
-      <div className="w-full max-w-4xl bg-white rounded-2xl shadow-lg overflow-hidden grid grid-cols-1 md:grid-cols-2">
+      <div className="w-full max-w-4xl auth-card overflow-hidden grid grid-cols-1 md:grid-cols-2">
         {/* Branding / toggle */}
-        <div className="p-8 bg-gradient-to-br from-emerald-500 to-green-600 text-white flex flex-col">
+        <div className="p-8 auth-gradient text-white flex flex-col">
           <div>
             <h1 className="text-3xl font-extrabold">EcoFinds</h1>
-            <p className="mt-2 text-sm opacity-90">Sustainable second-hand marketplace — join the circular economy.</p>
+            <p className="mt-2 text-sm opacity-90">
+              Sustainable second-hand marketplace — join the circular economy.
+            </p>
           </div>
 
           <div className="mt-auto">
@@ -93,7 +109,9 @@ export default function AuthPage({ apiBase = "" }) {
               <button
                 onClick={() => setMode("signin")}
                 className={`px-4 py-2 rounded-lg font-medium ${
-                  mode === "signin" ? "bg-white text-emerald-600" : "bg-white/20 hover:bg-white/30"
+                  mode === "signin"
+                    ? "bg-white text-emerald-600"
+                    : "bg-white/20 hover:bg-white/30"
                 }`}
                 aria-pressed={mode === "signin"}
               >
@@ -103,7 +121,9 @@ export default function AuthPage({ apiBase = "" }) {
               <button
                 onClick={() => setMode("signup")}
                 className={`px-4 py-2 rounded-lg font-medium ${
-                  mode === "signup" ? "bg-white text-emerald-600" : "bg-white/20 hover:bg-white/30"
+                  mode === "signup"
+                    ? "bg-white text-emerald-600"
+                    : "bg-white/20 hover:bg-white/30"
                 }`}
                 aria-pressed={mode === "signup"}
               >
@@ -126,8 +146,14 @@ export default function AuthPage({ apiBase = "" }) {
           )}
 
           {mode === "signin" ? (
-            <form onSubmit={handleSignIn} className="space-y-4" autoComplete="on">
-              <h2 className="text-2xl font-semibold">Sign in to your account</h2>
+            <form
+              onSubmit={handleSignIn}
+              className="space-y-4"
+              autoComplete="on"
+            >
+              <h2 className="text-2xl font-semibold">
+                Sign in to your account
+              </h2>
 
               <label className="block">
                 <span className="text-sm font-medium">Email</span>
@@ -135,7 +161,9 @@ export default function AuthPage({ apiBase = "" }) {
                   type="email"
                   className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                   value={signIn.email}
-                  onChange={(e) => setSignIn({ ...signIn, email: e.target.value })}
+                  onChange={(e) =>
+                    setSignIn({ ...signIn, email: e.target.value })
+                  }
                   required
                   autoComplete="email"
                 />
@@ -148,7 +176,9 @@ export default function AuthPage({ apiBase = "" }) {
                     type={showPassword ? "text" : "password"}
                     className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                     value={signIn.password}
-                    onChange={(e) => setSignIn({ ...signIn, password: e.target.value })}
+                    onChange={(e) =>
+                      setSignIn({ ...signIn, password: e.target.value })
+                    }
                     required
                     autoComplete="current-password"
                   />
@@ -168,7 +198,9 @@ export default function AuthPage({ apiBase = "" }) {
                   <input
                     type="checkbox"
                     checked={signIn.remember}
-                    onChange={(e) => setSignIn({ ...signIn, remember: e.target.checked })}
+                    onChange={(e) =>
+                      setSignIn({ ...signIn, remember: e.target.checked })
+                    }
                     className="rounded border-gray-300"
                   />
                   Remember me
@@ -194,7 +226,11 @@ export default function AuthPage({ apiBase = "" }) {
               </div>
             </form>
           ) : (
-            <form onSubmit={handleSignUp} className="space-y-4" autoComplete="on">
+            <form
+              onSubmit={handleSignUp}
+              className="space-y-4"
+              autoComplete="on"
+            >
               <h2 className="text-2xl font-semibold">Create your account</h2>
 
               <label className="block">
@@ -203,7 +239,9 @@ export default function AuthPage({ apiBase = "" }) {
                   type="text"
                   className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                   value={signUp.username}
-                  onChange={(e) => setSignUp({ ...signUp, username: e.target.value })}
+                  onChange={(e) =>
+                    setSignUp({ ...signUp, username: e.target.value })
+                  }
                   required
                   autoComplete="username"
                 />
@@ -215,7 +253,9 @@ export default function AuthPage({ apiBase = "" }) {
                   type="email"
                   className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                   value={signUp.email}
-                  onChange={(e) => setSignUp({ ...signUp, email: e.target.value })}
+                  onChange={(e) =>
+                    setSignUp({ ...signUp, email: e.target.value })
+                  }
                   required
                   autoComplete="email"
                 />
@@ -228,7 +268,9 @@ export default function AuthPage({ apiBase = "" }) {
                     type={showPassword ? "text" : "password"}
                     className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                     value={signUp.password}
-                    onChange={(e) => setSignUp({ ...signUp, password: e.target.value })}
+                    onChange={(e) =>
+                      setSignUp({ ...signUp, password: e.target.value })
+                    }
                     required
                     autoComplete="new-password"
                   />
@@ -240,7 +282,9 @@ export default function AuthPage({ apiBase = "" }) {
                     type={showPassword ? "text" : "password"}
                     className="mt-1 w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-300"
                     value={signUp.confirmPassword}
-                    onChange={(e) => setSignUp({ ...signUp, confirmPassword: e.target.value })}
+                    onChange={(e) =>
+                      setSignUp({ ...signUp, confirmPassword: e.target.value })
+                    }
                     required
                     autoComplete="new-password"
                   />
@@ -255,7 +299,9 @@ export default function AuthPage({ apiBase = "" }) {
                   onChange={(e) => setShowPassword(e.target.checked)}
                   className="rounded border-gray-300"
                 />
-                <label htmlFor="show-password-signup" className="text-sm">Show passwords</label>
+                <label htmlFor="show-password-signup" className="text-sm">
+                  Show passwords
+                </label>
               </div>
 
               <div className="pt-2">
@@ -269,7 +315,11 @@ export default function AuthPage({ apiBase = "" }) {
               </div>
 
               <div className="text-center mt-2">
-                <button type="button" onClick={() => setMode("signin")} className="text-sm text-emerald-600 underline">
+                <button
+                  type="button"
+                  onClick={() => setMode("signin")}
+                  className="text-sm text-emerald-600 underline"
+                >
                   Already have an account? Sign in
                 </button>
               </div>
