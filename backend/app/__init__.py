@@ -1,0 +1,1 @@
+"""EcoFinds backend app package."""
