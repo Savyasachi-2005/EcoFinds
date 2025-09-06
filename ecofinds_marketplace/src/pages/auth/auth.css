@@ -1,0 +1,102 @@
+/* Auth page styles: neutral, modern, and accessible */
+
+:root {
+  --auth-bg: #f8fafc; /* gray-50 */
+  --auth-card-bg: #ffffff; /* white */
+  --auth-border: #e5e7eb; /* gray-200 */
+  --auth-text: #0f172a; /* slate-900 */
+  --auth-muted: #6b7280; /* gray-500 */
+  --auth-primary: #059669; /* emerald-600 */
+  --auth-primary-100: #d1fae5; /* emerald-100 */
+  --auth-primary-200: #a7f3d0; /* emerald-200 */
+  --auth-primary-300: #6ee7b7; /* emerald-300 */
+  --auth-focus: rgba(5, 150, 105, 0.35);
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --shadow-soft: 0 10px 25px rgba(2, 6, 23, 0.06);
+}
+
+/* Layout */
+.auth-card {
+  background: var(--auth-card-bg);
+  border: 1px solid var(--auth-border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+}
+
+/* Left gradient panel */
+.auth-gradient {
+  background: linear-gradient(135deg, var(--auth-primary) 0%, #34d399 100%);
+}
+
+/* Inputs */
+.auth-card input[type="text"],
+.auth-card input[type="email"],
+.auth-card input[type="password"] {
+  border: 1px solid var(--auth-border);
+  border-radius: var(--radius-lg);
+  transition: box-shadow 160ms ease, border-color 160ms ease,
+    background 160ms ease;
+}
+
+.auth-card input:focus {
+  outline: none;
+  border-color: var(--auth-primary-300);
+  box-shadow: 0 0 0 3px var(--auth-focus);
+  background: #fff;
+}
+
+/* Buttons */
+.auth-btn-primary {
+  background: var(--auth-primary);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+}
+
+.auth-btn-primary:disabled {
+  opacity: 0.6;
+}
+
+/* Toggle buttons on left panel */
+.auth-toggle {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.auth-toggle:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.auth-toggle.is-active {
+  background: #fff;
+  color: var(--auth-primary);
+}
+
+/* Error box */
+.auth-error {
+  color: #b91c1c; /* red-700 */
+  background: #fef2f2; /* red-50 */
+  border: 1px solid #fee2e2; /* red-100 */
+  border-radius: var(--radius-lg);
+}
+
+/* Small helpers */
+.auth-muted {
+  color: var(--auth-muted);
+}
+.auth-link {
+  color: var(--auth-primary);
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .auth-card {
+    border-radius: var(--radius-lg);
+  }
+}
