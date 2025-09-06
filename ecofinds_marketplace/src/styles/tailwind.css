@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,49 +6,49 @@
 @layer base {
   :root {
     /* Core Colors */
-    --color-background: #F8FAFC; /* slate-50 */
-    --color-foreground: #1F2937; /* gray-800 */
-    --color-border: #E5E7EB; /* gray-200 */
-    --color-input: #F8FAFC; /* slate-50 */
-    --color-ring: #10B981; /* emerald-500 */
-    
+    --color-background: #f8fafc; /* slate-50 */
+    --color-foreground: #1f2937; /* gray-800 */
+    --color-border: #e5e7eb; /* gray-200 */
+    --color-input: #f8fafc; /* slate-50 */
+    --color-ring: #10b981; /* emerald-500 */
+
     /* Card Colors */
-    --color-card: #FFFFFF; /* white */
-    --color-card-foreground: #1F2937; /* gray-800 */
-    --color-popover: #FFFFFF; /* white */
-    --color-popover-foreground: #1F2937; /* gray-800 */
-    
+    --color-card: #ffffff; /* white */
+    --color-card-foreground: #1f2937; /* gray-800 */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1f2937; /* gray-800 */
+
     /* Muted Colors */
-    --color-muted: #F1F5F9; /* slate-100 */
-    --color-muted-foreground: #6B7280; /* gray-500 */
-    
+    --color-muted: #f1f5f9; /* slate-100 */
+    --color-muted-foreground: #6b7280; /* gray-500 */
+
     /* Primary Colors */
-    --color-primary: #10B981; /* emerald-500 */
-    --color-primary-foreground: #FFFFFF; /* white */
-    
+    --color-primary: #10b981; /* emerald-500 */
+    --color-primary-foreground: #ffffff; /* white */
+
     /* Secondary Colors */
     --color-secondary: #059669; /* emerald-600 */
-    --color-secondary-foreground: #FFFFFF; /* white */
-    
+    --color-secondary-foreground: #ffffff; /* white */
+
     /* Destructive Colors */
-    --color-destructive: #DC2626; /* red-600 */
-    --color-destructive-foreground: #FFFFFF; /* white */
-    
+    --color-destructive: #dc2626; /* red-600 */
+    --color-destructive-foreground: #ffffff; /* white */
+
     /* Accent Colors */
-    --color-accent: #92400E; /* amber-800 */
-    --color-accent-foreground: #FFFFFF; /* white */
-    
+    --color-accent: #92400e; /* amber-800 */
+    --color-accent-foreground: #ffffff; /* white */
+
     /* Success Colors */
-    --color-success: #065F46; /* emerald-800 */
-    --color-success-foreground: #FFFFFF; /* white */
-    
+    --color-success: #065f46; /* emerald-800 */
+    --color-success-foreground: #ffffff; /* white */
+
     /* Warning Colors */
-    --color-warning: #D97706; /* amber-600 */
-    --color-warning-foreground: #FFFFFF; /* white */
-    
+    --color-warning: #d97706; /* amber-600 */
+    --color-warning-foreground: #ffffff; /* white */
+
     /* Error Colors */
-    --color-error: #DC2626; /* red-600 */
-    --color-error-foreground: #FFFFFF; /* white */
+    --color-error: #dc2626; /* red-600 */
+    --color-error-foreground: #ffffff; /* white */
   }
 }
 
@@ -56,14 +56,19 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    font-family: "Libre Baskerville", serif;
   }
-  
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Inter', sans-serif;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Libre Baskerville", serif;
   }
 }
 
@@ -71,20 +76,41 @@
   .scroll-smooth {
     scroll-behavior: smooth;
   }
-  
+
   .shadow-eco-card {
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
   }
-  
+
   .shadow-eco-cta {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   }
-  
+
   .transition-eco {
     transition: all 200ms ease-in-out;
   }
-  
+
   .transition-eco-slow {
     transition: all 300ms ease-in-out;
+  }
+
+  /* Spacing & layout utilities for consistent rhythm across pages */
+  .container-eco {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-y {
+    @apply py-12 sm:py-16 lg:py-20;
+  }
+
+  .section-y-tight {
+    @apply py-8 sm:py-10 lg:py-12;
+  }
+
+  .stack-md {
+    @apply space-y-8 sm:space-y-10 lg:space-y-12;
+  }
+
+  .stack-lg {
+    @apply space-y-10 sm:space-y-12 lg:space-y-16;
   }
 }

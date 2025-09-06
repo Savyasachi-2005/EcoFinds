@@ -34,7 +34,7 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       {/* Main Footer */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="container-eco section-y-tight">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {/* Brand & blurb */}
           <div className="space-y-3">
@@ -123,7 +123,7 @@ const Footer = () => {
 
       {/* Bottom Footer */}
       <div className="border-t border-border bg-muted/30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5">
+        <div className="container-eco py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3">
             <div className="text-sm text-muted-foreground flex flex-wrap items-center gap-4">
               <span>© {currentYear} EcoFinds. All rights reserved.</span>

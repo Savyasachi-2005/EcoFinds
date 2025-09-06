@@ -7,9 +7,13 @@ import Footer from "./components/Footer";
 const LandingPage = () => {
   return (
     <div className="min-h-screen bg-background">
+      {/* Hero is full viewport with its own spacing */}
       <HeroSection />
-      <ProblemSolutionSection />
-      <FinalCTASection />
+      {/* Standard vertical rhythm for inner sections */}
+      <div className="stack-lg">
+        <ProblemSolutionSection />
+        <FinalCTASection />
+      </div>
       <Footer />
     </div>
   );

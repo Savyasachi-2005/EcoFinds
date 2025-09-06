@@ -1,18 +1,18 @@
-import React, { useState } from 'react';
-import Button from '../../../components/ui/Button';
-import Icon from '../../../components/AppIcon';
-import Image from '../../../components/AppImage';
+import React, { useState } from "react";
+import Button from "../../../components/ui/Button";
+import Icon from "../../../components/AppIcon";
+import Image from "../../../components/AppImage";
 
 const FeaturedProducts = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   const categories = [
-    { id: 'all', name: 'All Items', icon: 'Grid3X3' },
-    { id: 'electronics', name: 'Electronics', icon: 'Smartphone' },
-    { id: 'fashion', name: 'Fashion', icon: 'Shirt' },
-    { id: 'furniture', name: 'Furniture', icon: 'Armchair' },
-    { id: 'books', name: 'Books', icon: 'Book' }
+    { id: "all", name: "All Items", icon: "Grid3X3" },
+    { id: "electronics", name: "Electronics", icon: "Smartphone" },
+    { id: "fashion", name: "Fashion", icon: "Shirt" },
+    { id: "furniture", name: "Furniture", icon: "Armchair" },
+    { id: "books", name: "Books", icon: "Book" },
   ];
 
   const products = [
@@ -29,7 +29,8 @@ const FeaturedProducts = () => {
       rating: 4.9,
       location: "Mumbai, Maharashtra",
       verified: true,
-      description: "Pristine condition iPhone 13 Pro Max with original box and accessories. Battery health 95%."
+      description:
+        "Pristine condition iPhone 13 Pro Max with original box and accessories. Battery health 95%.",
     },
     {
       id: 2,
@@ -38,13 +39,15 @@ const FeaturedProducts = () => {
       originalPrice: 15999,
       salePrice: 4800,
       savings: 70,
-      image: "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg",
+      image:
+        "https://images.pexels.com/photos/1124465/pexels-photo-1124465.jpeg",
       condition: "Very Good",
       seller: "Fashion Forward",
       rating: 4.8,
       location: "Delhi, NCR",
       verified: true,
-      description: "Genuine leather jacket from premium brand. Worn only a few times, excellent condition."
+      description:
+        "Genuine leather jacket from premium brand. Worn only a few times, excellent condition.",
     },
     {
       id: 3,
@@ -59,7 +62,8 @@ const FeaturedProducts = () => {
       rating: 5.0,
       location: "Bangalore, Karnataka",
       verified: true,
-      description: "MacBook Air M1 with 8GB RAM, 256GB SSD. Perfect for students and professionals."
+      description:
+        "MacBook Air M1 with 8GB RAM, 256GB SSD. Perfect for students and professionals.",
     },
     {
       id: 4,
@@ -68,13 +72,15 @@ const FeaturedProducts = () => {
       originalPrice: 12000,
       salePrice: 5500,
       savings: 54,
-      image: "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
+      image:
+        "https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg",
       condition: "Good",
       seller: "Vintage Finds",
       rating: 4.7,
       location: "Pune, Maharashtra",
       verified: true,
-      description: "Beautiful vintage wooden bookshelf with 5 shelves. Perfect for home library."
+      description:
+        "Beautiful vintage wooden bookshelf with 5 shelves. Perfect for home library.",
     },
     {
       id: 5,
@@ -89,7 +95,8 @@ const FeaturedProducts = () => {
       rating: 4.9,
       location: "Chennai, Tamil Nadu",
       verified: true,
-      description: "Canon EOS 1500D with 18-55mm lens. Great for photography enthusiasts."
+      description:
+        "Canon EOS 1500D with 18-55mm lens. Great for photography enthusiasts.",
     },
     {
       id: 6,
@@ -98,13 +105,15 @@ const FeaturedProducts = () => {
       originalPrice: 8999,
       salePrice: 2700,
       savings: 70,
-      image: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg",
+      image:
+        "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg",
       condition: "Excellent",
       seller: "Luxury Bags",
       rating: 4.8,
       location: "Mumbai, Maharashtra",
       verified: true,
-      description: "Authentic designer handbag in excellent condition. Comes with authenticity certificate."
+      description:
+        "Authentic designer handbag in excellent condition. Comes with authenticity certificate.",
     },
     {
       id: 7,
@@ -113,13 +122,15 @@ const FeaturedProducts = () => {
       originalPrice: 3500,
       salePrice: 1800,
       savings: 49,
-      image: "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg",
+      image:
+        "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg",
       condition: "Good",
       seller: "BookWorm Collection",
       rating: 4.6,
       location: "Hyderabad, Telangana",
       verified: true,
-      description: "Complete set of programming books including Python, JavaScript, and React guides."
+      description:
+        "Complete set of programming books including Python, JavaScript, and React guides.",
     },
     {
       id: 8,
@@ -128,13 +139,15 @@ const FeaturedProducts = () => {
       originalPrice: 18000,
       salePrice: 9000,
       savings: 50,
-      image: "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg",
+      image:
+        "https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg",
       condition: "Very Good",
       seller: "Gaming Gear",
       rating: 4.7,
       location: "Gurgaon, Haryana",
       verified: true,
-      description: "Ergonomic gaming chair with lumbar support. Perfect for long gaming sessions."
+      description:
+        "Ergonomic gaming chair with lumbar support. Perfect for long gaming sessions.",
     },
     {
       id: 9,
@@ -149,7 +162,8 @@ const FeaturedProducts = () => {
       rating: 4.9,
       location: "Kolkata, West Bengal",
       verified: true,
-      description: "Apple Watch Series 7 with GPS and cellular. Includes original charger and bands."
+      description:
+        "Apple Watch Series 7 with GPS and cellular. Includes original charger and bands.",
     },
     {
       id: 10,
@@ -158,13 +172,15 @@ const FeaturedProducts = () => {
       originalPrice: 4999,
       salePrice: 1500,
       savings: 70,
-      image: "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg",
+      image:
+        "https://images.pexels.com/photos/1040945/pexels-photo-1040945.jpeg",
       condition: "Good",
       seller: "Retro Fashion",
       rating: 4.5,
       location: "Jaipur, Rajasthan",
       verified: true,
-      description: "Classic vintage denim jacket with authentic wear. Perfect for casual styling."
+      description:
+        "Classic vintage denim jacket with authentic wear. Perfect for casual styling.",
     },
     {
       id: 11,
@@ -173,13 +189,15 @@ const FeaturedProducts = () => {
       originalPrice: 8500,
       salePrice: 3800,
       savings: 55,
-      image: "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg",
+      image:
+        "https://images.pexels.com/photos/1957477/pexels-photo-1957477.jpeg",
       condition: "Very Good",
       seller: "Home Essentials",
       rating: 4.6,
       location: "Ahmedabad, Gujarat",
       verified: true,
-      description: "Compact study table with storage drawer. Ideal for students and home office."
+      description:
+        "Compact study table with storage drawer. Ideal for students and home office.",
     },
     {
       id: 12,
@@ -188,19 +206,22 @@ const FeaturedProducts = () => {
       originalPrice: 2800,
       salePrice: 1400,
       savings: 50,
-      image: "https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg",
+      image:
+        "https://images.pexels.com/photos/1029141/pexels-photo-1029141.jpeg",
       condition: "Good",
       seller: "Novel Paradise",
       rating: 4.4,
       location: "Kochi, Kerala",
       verified: true,
-      description: "Collection of bestselling fiction novels from popular authors. Great for book lovers."
-    }
+      description:
+        "Collection of bestselling fiction novels from popular authors. Great for book lovers.",
+    },
   ];
 
-  const filteredProducts = selectedCategory === 'all' 
-    ? products 
-    : products?.filter(product => product?.category === selectedCategory);
+  const filteredProducts =
+    selectedCategory === "all"
+      ? products
+      : products?.filter((product) => product?.category === selectedCategory);
 
   const openProductModal = (product) => {
     setSelectedProduct(product);
@@ -211,38 +232,41 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section id="shop-products" className="py-20 bg-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="shop-products" className="section-y-tight bg-muted/30">
+      <div className="container-eco">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
             Featured <span className="text-primary">Products</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Discover amazing deals on quality pre-owned items from verified sellers
+            Discover amazing deals on quality pre-owned items from verified
+            sellers
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 sm:mb-12">
           {categories?.map((category) => (
             <button
               key={category?.id}
               onClick={() => setSelectedCategory(category?.id)}
-              className={`flex items-center space-x-2 px-6 py-3 rounded-full transition-eco ${
+              className={`flex items-center space-x-2 px-3 py-2 sm:px-5 sm:py-2 rounded-full transition-eco ${
                 selectedCategory === category?.id
-                  ? 'bg-primary text-primary-foreground shadow-eco-card'
-                  : 'bg-card text-muted-foreground hover:text-foreground hover:bg-muted border border-border'
+                  ? "bg-primary text-primary-foreground shadow-eco-card"
+                  : "bg-card text-muted-foreground hover:text-foreground hover:bg-muted border border-border"
               }`}
             >
               <Icon name={category?.icon} size={18} />
-              <span className="font-medium">{category?.name}</span>
+              <span className="font-medium text-sm sm:text-base">
+                {category?.name}
+              </span>
             </button>
           ))}
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {filteredProducts?.map((product) => (
             <div
               key={product?.id}
@@ -254,14 +278,14 @@ const FeaturedProducts = () => {
                 <Image
                   src={product?.image}
                   alt={product?.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  className="w-full h-40 sm:h-48 md:h-52 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
-                
+
                 {/* Savings Badge */}
                 <div className="absolute top-3 left-3 bg-success text-success-foreground px-2 py-1 rounded-full text-xs font-bold">
                   {product?.savings}% OFF
                 </div>
-                
+
                 {/* Verified Badge */}
                 {product?.verified && (
                   <div className="absolute top-3 right-3 bg-primary text-primary-foreground p-1 rounded-full">
@@ -271,40 +295,53 @@ const FeaturedProducts = () => {
 
                 {/* Quick View Overlay */}
                 <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  <Button variant="default" size="sm" iconName="Eye" iconPosition="left">
+                  <Button
+                    variant="default"
+                    size="sm"
+                    iconName="Eye"
+                    iconPosition="left"
+                  >
                     Quick View
                   </Button>
                 </div>
               </div>
 
               {/* Product Info */}
-              <div className="p-4 space-y-3">
+              <div className="p-3 sm:p-4 space-y-3">
                 <div>
-                  <h3 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors">
+                  <h3 className="font-semibold text-foreground line-clamp-2 group-hover:text-primary transition-colors text-sm sm:text-base">
                     {product?.title}
                   </h3>
-                  <p className="text-sm text-muted-foreground">{product?.condition}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {product?.condition}
+                  </p>
                 </div>
 
                 {/* Price */}
                 <div className="flex items-center space-x-2">
-                  <span className="text-lg font-bold text-primary">
-                    ₹{product?.salePrice?.toLocaleString('en-IN')}
+                  <span className="text-base sm:text-lg font-bold text-primary">
+                    ₹{product?.salePrice?.toLocaleString("en-IN")}
                   </span>
                   <span className="text-sm text-muted-foreground line-through">
-                    ₹{product?.originalPrice?.toLocaleString('en-IN')}
+                    ₹{product?.originalPrice?.toLocaleString("en-IN")}
                   </span>
                 </div>
 
                 {/* Seller Info */}
                 <div className="flex items-center justify-between text-sm">
                   <div className="flex items-center space-x-1">
-                    <Icon name="Star" size={14} className="text-warning fill-current" />
+                    <Icon
+                      name="Star"
+                      size={14}
+                      className="text-warning fill-current"
+                    />
                     <span className="font-medium">{product?.rating}</span>
                   </div>
                   <div className="flex items-center space-x-1 text-muted-foreground">
                     <Icon name="MapPin" size={14} />
-                    <span className="truncate">{product?.location?.split(',')?.[0]}</span>
+                    <span className="truncate">
+                      {product?.location?.split(",")?.[0]}
+                    </span>
                   </div>
                 </div>
               </div>
@@ -313,10 +350,10 @@ const FeaturedProducts = () => {
         </div>
 
         {/* Load More Button */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 sm:mt-12">
           <Button
             variant="outline"
-            size="lg"
+            size="md"
             iconName="Plus"
             iconPosition="left"
           >
@@ -330,7 +367,9 @@ const FeaturedProducts = () => {
             <div className="bg-card rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
               {/* Modal Header */}
               <div className="flex items-center justify-between p-6 border-b border-border">
-                <h3 className="text-xl font-bold text-foreground">Product Details</h3>
+                <h3 className="text-xl font-bold text-foreground">
+                  Product Details
+                </h3>
                 <button
                   onClick={closeProductModal}
                   className="p-2 hover:bg-muted rounded-full transition-colors"
@@ -340,14 +379,14 @@ const FeaturedProducts = () => {
               </div>
 
               {/* Modal Content */}
-              <div className="p-6 space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <div className="p-5 sm:p-6 space-y-6">
+                <div className="grid md:grid-cols-2 gap-5 sm:gap-6">
                   {/* Product Image */}
                   <div className="relative">
                     <Image
                       src={selectedProduct?.image}
                       alt={selectedProduct?.title}
-                      className="w-full h-64 object-cover rounded-xl"
+                      className="w-full h-48 sm:h-64 object-cover rounded-xl"
                     />
                     <div className="absolute top-3 left-3 bg-success text-success-foreground px-3 py-1 rounded-full text-sm font-bold">
                       {selectedProduct?.savings}% OFF
@@ -357,31 +396,42 @@ const FeaturedProducts = () => {
                   {/* Product Info */}
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-2xl font-bold text-foreground mb-2">
+                      <h4 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                         {selectedProduct?.title}
                       </h4>
-                      <p className="text-muted-foreground">{selectedProduct?.description}</p>
+                      <p className="text-muted-foreground">
+                        {selectedProduct?.description}
+                      </p>
                     </div>
 
                     {/* Price */}
                     <div className="space-y-2">
                       <div className="flex items-center space-x-3">
-                        <span className="text-3xl font-bold text-primary">
-                          ₹{selectedProduct?.salePrice?.toLocaleString('en-IN')}
+                        <span className="text-2xl sm:text-3xl font-bold text-primary">
+                          ₹{selectedProduct?.salePrice?.toLocaleString("en-IN")}
                         </span>
-                        <span className="text-lg text-muted-foreground line-through">
-                          ₹{selectedProduct?.originalPrice?.toLocaleString('en-IN')}
+                        <span className="text-base sm:text-lg text-muted-foreground line-through">
+                          ₹
+                          {selectedProduct?.originalPrice?.toLocaleString(
+                            "en-IN"
+                          )}
                         </span>
                       </div>
                       <p className="text-sm text-success font-medium">
-                        You save ₹{(selectedProduct?.originalPrice - selectedProduct?.salePrice)?.toLocaleString('en-IN')}
+                        You save ₹
+                        {(
+                          selectedProduct?.originalPrice -
+                          selectedProduct?.salePrice
+                        )?.toLocaleString("en-IN")}
                       </p>
                     </div>
 
                     {/* Seller Info */}
                     <div className="bg-muted/50 rounded-xl p-4 space-y-2">
                       <div className="flex items-center justify-between">
-                        <span className="font-medium text-foreground">{selectedProduct?.seller}</span>
+                        <span className="font-medium text-foreground">
+                          {selectedProduct?.seller}
+                        </span>
                         {selectedProduct?.verified && (
                           <div className="flex items-center space-x-1 text-primary">
                             <Icon name="ShieldCheck" size={16} />
@@ -391,7 +441,11 @@ const FeaturedProducts = () => {
                       </div>
                       <div className="flex items-center justify-between text-sm text-muted-foreground">
                         <div className="flex items-center space-x-1">
-                          <Icon name="Star" size={14} className="text-warning fill-current" />
+                          <Icon
+                            name="Star"
+                            size={14}
+                            className="text-warning fill-current"
+                          />
                           <span>{selectedProduct?.rating} rating</span>
                         </div>
                         <div className="flex items-center space-x-1">
@@ -403,18 +457,32 @@ const FeaturedProducts = () => {
 
                     {/* Condition */}
                     <div className="flex items-center space-x-2">
-                      <span className="text-sm text-muted-foreground">Condition:</span>
-                      <span className="text-sm font-medium text-foreground">{selectedProduct?.condition}</span>
+                      <span className="text-sm text-muted-foreground">
+                        Condition:
+                      </span>
+                      <span className="text-sm font-medium text-foreground">
+                        {selectedProduct?.condition}
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
                 <div className="flex space-x-4">
-                  <Button variant="default" fullWidth iconName="MessageCircle" iconPosition="left">
+                  <Button
+                    variant="default"
+                    fullWidth
+                    iconName="MessageCircle"
+                    iconPosition="left"
+                  >
                     Contact Seller
                   </Button>
-                  <Button variant="outline" fullWidth iconName="Heart" iconPosition="left">
+                  <Button
+                    variant="outline"
+                    fullWidth
+                    iconName="Heart"
+                    iconPosition="left"
+                  >
                     Save Item
                   </Button>
                 </div>

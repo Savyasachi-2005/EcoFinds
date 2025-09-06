@@ -6,57 +6,55 @@ import Icon from "../../../components/AppIcon";
 
 const FinalCTASection = () => {
   const [email, setEmail] = useState("");
-  const navigate = useNavigate();
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {}, []);
 
   const handleEmailSubmit = (e) => {
     e?.preventDefault();
-    if (email) {
-      setIsSubscribed(true);
-      setTimeout(() => {
-        setIsSubscribed(false);
-        setEmail("");
-      }, 3000);
-    }
+    if (!email) return;
+    setIsSubscribed(true);
+    setTimeout(() => {
+      setIsSubscribed(false);
+      setEmail("");
+    }, 3000);
   };
 
   const handleShopNow = () => navigate("/explore");
-
   const handleStartSelling = () => navigate("/sell");
 
   return (
-    <section className="py-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="pt-2 sm:pt-4 lg:pt-6 pb-12 sm:pb-16 lg:pb-20 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
+      <div className="container-eco space-y-4 sm:space-y-6 lg:space-y-8">
         {/* Early Access Banner */}
-        <div className="bg-card rounded-2xl p-4 shadow-eco-card border border-border mb-12">
+        <div className="bg-card rounded-2xl p-4 shadow-eco-card border border-border">
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Icon name="Rocket" size={16} className="text-primary" />
             <span>
-              We’re just getting started — join our early community and help us
+              We're just getting started — join our early community and help us
               improve
             </span>
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-4xl sm:text-5xl font-bold text-foreground mb-6 leading-tight">
-                Ready to Give Products a{" "}
+              <h2 className="text-3xl sm:text-5xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
+                Ready to Give Products a {""}
                 <span className="text-primary">Second Life</span>?
               </h2>
-              <p className="text-xl text-muted-foreground mb-8">
+              <p className="text-lg sm:text-xl text-muted-foreground mb-6 sm:mb-8">
                 Start your journey with EcoFinds. Save money, reduce waste, and
-                help build a sustainable future. We’re in early access and would
+                help build a sustainable future. We're in early access and would
                 love your feedback.
               </p>
             </div>
 
             {/* Key Benefits */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {[
                 {
                   icon: "PiggyBank",
@@ -81,7 +79,7 @@ const FinalCTASection = () => {
               ]?.map((benefit, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-3 bg-card/50 rounded-xl p-4"
+                  className="flex items-center space-x-3 bg-card/50 rounded-xl p-3 sm:p-4"
                 >
                   <div className="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center">
                     <Icon
@@ -103,7 +101,7 @@ const FinalCTASection = () => {
             </div>
 
             {/* Primary CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Button
                 variant="default"
                 size="lg"
@@ -131,13 +129,13 @@ const FinalCTASection = () => {
           </div>
 
           {/* Right Content - Email Signup */}
-          <div className="space-y-8">
-            <div className="bg-card rounded-3xl p-8 shadow-eco-cta border border-border">
+          <div className="space-y-6 md:space-y-8">
+            <div className="bg-card rounded-3xl p-6 sm:p-8 shadow-eco-cta border border-border">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
                   <Icon name="Mail" size={24} className="text-white" />
                 </div>
-                <h3 className="text-2xl font-bold text-foreground mb-2">
+                <h3 className="text-xl sm:text-2xl font-bold text-foreground mb-2">
                   Get Early Updates
                 </h3>
                 <p className="text-muted-foreground">
@@ -147,7 +145,10 @@ const FinalCTASection = () => {
               </div>
 
               {!isSubscribed ? (
-                <form onSubmit={handleEmailSubmit} className="space-y-4">
+                <form
+                  onSubmit={handleEmailSubmit}
+                  className="space-y-3 sm:space-y-4"
+                >
                   <Input
                     type="email"
                     placeholder="Enter your email address"
@@ -159,7 +160,7 @@ const FinalCTASection = () => {
                   <Button
                     type="submit"
                     variant="default"
-                    size="lg"
+                    size="md"
                     fullWidth
                     iconName="ArrowRight"
                     iconPosition="right"
@@ -168,11 +169,11 @@ const FinalCTASection = () => {
                   </Button>
                 </form>
               ) : (
-                <div className="text-center py-8">
+                <div className="text-center py-6 sm:py-8">
                   <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Icon name="Check" size={24} className="text-success" />
                   </div>
-                  <h4 className="text-lg font-semibold text-success mb-2">
+                  <h4 className="text-base sm:text-lg font-semibold text-success mb-2">
                     Welcome to EcoFinds!
                   </h4>
                   <p className="text-muted-foreground">
@@ -180,12 +181,10 @@ const FinalCTASection = () => {
                   </p>
                 </div>
               )}
-
-              {/* Stats removed until we have real data */}
             </div>
 
             {/* Gentle nudge instead of urgency */}
-            <div className="bg-card/60 rounded-2xl p-6 border border-border">
+            <div className="bg-card/60 rounded-2xl p-5 sm:p-6 border border-border">
               <div className="flex items-start gap-4">
                 <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center">
                   <Icon name="Heart" size={24} className="text-primary" />
@@ -225,8 +224,6 @@ const FinalCTASection = () => {
             </div>
           </div>
         </div>
-
-        {/* Bottom Stats removed until we have real data */}
       </div>
     </section>
   );
