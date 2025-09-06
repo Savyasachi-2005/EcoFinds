@@ -1,0 +1,42 @@
+# Environment
+/.env
+/.env.*
+.env.local
+
+# Virtual environments
+/.venv
+venv/
+
+# Python cache/bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build and distribution
+build/
+dist/
+*.egg-info/
+
+# Logs and coverage
+*.log
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDE/editor
+.vscode/
+.idea/
+*.code-workspace
+
+# Alembic migrations cache (keep versions folder tracked if you add migrations later)
+alembic/*.log
+alembic.ini
+
+# Local SQLite DB files
+*.db
+*.sqlite3
+
+# OS files
+Thumbs.db
+.DS_Store
