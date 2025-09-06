@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "../AppIcon";
 import Button from "./Button";
 import { cn } from "../../utils/cn";
+import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
   const location = useLocation();
+  const { user } = useContext(AuthContext);
   const isAuthPage =
     location.pathname.startsWith("/signin") ||
     location.pathname.startsWith("/signup");
@@ -76,12 +78,31 @@ const Navbar = () => {
           </Button>
           {!isAuthPage && (
             <>
-              <Button asChild variant="outline" size="sm">
-                <Link to="/signin">Sign in</Link>
-              </Button>
-              <Button asChild size="sm">
-                <Link to="/signup">Sign up</Link>
-              </Button>
+              {user ? (
+                <Button 
+                  asChild 
+                  variant="ghost" 
+                  size="sm" 
+                  iconName="LayoutDashboard"
+                  className={isActive("/dashboard") ? "bg-primary/10 text-primary" : ""}
+                >
+                  <Link 
+                    to="/dashboard"
+                    aria-current={isActive("/dashboard") ? "page" : undefined}
+                  >
+                    Dashboard
+                  </Link>
+                </Button>
+              ) : (
+                <>
+                  <Button asChild variant="outline" size="sm">
+                    <Link to="/signin">Sign in</Link>
+                  </Button>
+                  <Button asChild size="sm">
+                    <Link to="/signup">Sign up</Link>
+                  </Button>
+                </>
+              )}
             </>
           )}
         </div>

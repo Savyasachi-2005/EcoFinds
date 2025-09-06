@@ -9,6 +9,7 @@ import SignUp from "./pages/auth/Auth";
 import ImpactPage from "./pages/impact/ImpactPage";
 import ExplorePage from "./pages/explore/ExplorePage";
 import SellPage from "./pages/sell/SellPage";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const Routes = () => {
   return (
@@ -22,6 +23,7 @@ const Routes = () => {
         <Route path="/sell" element={<SellPage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<NotFound />} />
       </RouterRoutes>
     </ErrorBoundary>
